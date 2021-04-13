@@ -1,0 +1,113 @@
+html{
+    font-size: 62.5%;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@mixin flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+$main-color:#B57EDC;
+$child-color: white;
+$header-size: 3.5rem;
+$family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+.main_photo{
+    background-image: url('https://images.indulgexpress.com/uploads/user/imagelibrary/2020/11/3/original/JL-main-feature.jpg');
+    background-color:$child-color;
+    
+    height: 580px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: relative;
+  
+    
+}
+.header{
+    color: $main-color;
+    font-family: $family;   
+    position: absolute;
+    top: 93%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size: $header-size;
+    text-transform: uppercase;
+   background-color: $child-color;
+}
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+   
+    background-color: $main-color;
+    font-size: 3rem;
+    position: sticky;
+    top:0px;
+
+   a{
+       text-decoration: none;
+       color:$child-color;
+       font-family: $family;
+       
+       &:hover{
+           
+           opacity: .85;
+        
+       }
+   }
+    
+}
+.para{
+   @include flexbox;
+    flex-direction: column;
+    font-size: 1.8rem;
+    background-color: $child-color;
+
+    p{
+       font-family: sans-serif;
+       font-weight:lighter;
+      
+    }
+}
+.more{
+   @include flexbox;
+   position: sticky;
+         bottom: 0px;
+         z-index: -1;
+   a{
+       font-size: $header-size;
+       font-family: $family;
+       color: $child-color;
+         text-decoration: none;
+         cursor: default;
+         border: $main-color 2px solid;
+         padding: 3px 10px 0px 10px;
+         background-color: $main-color;
+   }
+}
+@media(max-width:600px){
+    .main_photo{
+        background-position: center;
+        height: 400px;
+        
+    }
+    .header{
+        font-size: 2rem;
+        top:85%;
+        left: 53%;
+    }
+    .navbar{
+        font-size: 2rem;
+    }
+    .para{
+        font-size: 1rem;
+    }
+}
